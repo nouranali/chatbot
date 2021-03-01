@@ -2,7 +2,7 @@ from allennlp.predictors.predictor import Predictor as AllenNLPPredictor
 
 
 class Predictor:
-    def __init__(self, config):
+    def __init__(self):
         self.predictor = AllenNLPPredictor.from_path(
             "https://storage.googleapis.com/allennlp-public-models/bidaf-elmo-model-2018.11.30-charpad.tar.gz"
         )
@@ -12,3 +12,8 @@ class Predictor:
             passage=payload["passage"], question=payload["question"]
         )
         return prediction["best_span_str"]
+payload={}
+payload['passage']=input()
+payload["question"]=input()
+pre=Predictor()
+print(pre.predict(payload))
