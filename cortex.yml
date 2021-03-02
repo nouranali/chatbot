@@ -1,8 +1,0 @@
-- kind: deployment
-  name: reading
-- kind: api
-  name: comprehender
-  predictor:
-    path: predictor.py
-  compute:
-    cpu: 1
